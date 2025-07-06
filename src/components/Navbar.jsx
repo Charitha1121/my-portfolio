@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Navbar() {
   return (
@@ -14,29 +15,53 @@ export default function Navbar() {
           </h1>
         </div>
 
-        {/* Right side - Navigation links */}
-        <ul className="hidden md:flex space-x-8 text-white font-medium">
-          {[
-            { name: "About", href: "#about" },
-            { name: "Skills", href: "#skills" },
-            { name: "Projects", href: "#projects" },
-            { name: "Education", href: "#education" },
-            { name: "Certifications", href: "#certifications" },
-            { name: "Hackathons", href: "#hackathons" },
-            { name: "Activities", href: "#activities" },
-            { name: "Internships", href: "#internships" },
-            { name: "Contact", href: "#contact" },
-          ].map(({ name, href }) => (
-            <li key={name}>
-              <a
-                href={href}
-                className="hover:text-yellow-300 transition-colors duration-300 cursor-pointer"
-              >
-                {name}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Right side - Navigation links + social icons */}
+        <div className="flex items-center space-x-8">
+          <ul className="hidden md:flex space-x-8 text-white font-medium">
+            {[
+              { name: "About", href: "#about" },
+              { name: "Skills", href: "#skills" },
+              { name: "Projects", href: "#projects" },
+              { name: "Education", href: "#education" },
+              { name: "Certifications", href: "#certifications" },
+              { name: "Hackathons", href: "#hackathons" },
+              { name: "Activities", href: "#activities" },
+              { name: "Internships", href: "#internships" },
+              { name: "Contact", href: "#contact" },
+            ].map(({ name, href }) => (
+              <li key={name}>
+                <a
+                  href={href}
+                  className="hover:text-yellow-300 transition-colors duration-300 cursor-pointer"
+                >
+                  {name}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Social Icons */}
+          <div className="flex space-x-6 text-white text-2xl">
+            <a
+              href="https://github.com/Charitha1121"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="hover:text-yellow-300 transition-colors duration-300"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/boddupally-charitha-3a0385277/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="hover:text-yellow-300 transition-colors duration-300"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+        </div>
       </div>
     </nav>
   );
