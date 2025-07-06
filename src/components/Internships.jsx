@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const internships = [
   "Android Developer – Virtual Internship",
   "AI-ML – Virtual Internship",
-  "Website Design and Development",
+  "Web FullStack",
 ];
 
 export default function Internships() {

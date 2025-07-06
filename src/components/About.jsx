@@ -42,12 +42,7 @@ export default function About() {
       >
         <h2 className="text-4xl font-bold text-indigo-700">About Me</h2>
         <p>
-          I am a motivated and curious software engineer with a strong passion
-          for coding and continuous learning. I actively seek out emerging
-          technologies and tools that enhance Salesforce development, aiming to
-          build scalable, efficient solutions. My goal is to contribute to
-          innovative projects while expanding my expertise in Salesforce
-          engineering.
+          Dedicated and curious Computer Science student with a solid understanding of programming concepts, looking to leverage academic learning and project experience into a meaningful role in software development.
         </p>
         <p>
           Contact me at: <br />

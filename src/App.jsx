@@ -15,6 +15,14 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-indigo-100 to-yellow-100 text-gray-800 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 dark:text-white">
       <Navbar />
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-20">
+        <a
+  href="/resume.pdf"
+  download
+  className="inline-block mt-3 px-5 py-2 bg-white text-indigo-700 font-semibold rounded-full shadow hover:scale-105 hover:bg-yellow-200 transition-transform"
+>
+  📄 Download Resume
+</a>
+
         <About />
         <Skills />
         <Projects />
