@@ -1,4 +1,6 @@
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 import Navbar from "./components/Navbar.jsx";
 import About from "./components/About.jsx";
 import Skills from "./components/Skills.jsx";
@@ -9,7 +11,6 @@ import Hackathons from "./components/Hackathons.jsx";
 import Activities from "./components/Activities.jsx";
 import Internships from "./components/Internships.jsx";
 import Contact from "./components/Contact.jsx";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function App() {
   return (
@@ -24,38 +25,67 @@ export default function App() {
           📄 Download Resume
         </a>
 
-        <About />
-        <Skills />
-        <Projects />
-        <Education />
-        <Certifications />
-        <Hackathons />
-        <Activities />
-        <Internships />
-        <Contact />
+        <section id="about" className="scroll-mt-20 animate-fadeInUp animation-delay-200">
+          <About />
+        </section>
+
+        <section id="skills" className="scroll-mt-20 animate-fadeInUp animation-delay-400">
+          <Skills />
+        </section>
+
+        <section id="projects" className="scroll-mt-20 animate-fadeInUp animation-delay-600">
+          <Projects />
+        </section>
+
+        <section id="education" className="scroll-mt-20 animate-fadeInUp animation-delay-800">
+          <Education />
+        </section>
+
+        <section id="certifications" className="scroll-mt-20 animate-fadeInUp animation-delay-1000">
+          <Certifications />
+        </section>
+
+        <section id="hackathons" className="scroll-mt-20 animate-fadeInUp animation-delay-1200">
+          <Hackathons />
+        </section>
+
+        <section id="activities" className="scroll-mt-20 animate-fadeInUp animation-delay-1400">
+          <Activities />
+        </section>
+
+        <section id="internships" className="scroll-mt-20 animate-fadeInUp animation-delay-1600">
+          <Internships />
+        </section>
+
+        <section id="contact" className="scroll-mt-20 animate-fadeInUp animation-delay-1800">
+          <Contact />
+        </section>
       </main>
+
       <footer className="bg-gradient-to-r from-indigo-600 via-pink-600 to-yellow-500 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 text-white text-center py-6 mt-16 shadow-inner">
-        <p className="text-sm mb-2">&copy; 2025 Boddupally Charitha. Built with 💖 using React & Tailwind CSS</p>
-        <div className="flex justify-center space-x-6 text-white text-2xl">
+        <div className="flex justify-center space-x-6 mb-2">
           <a
             href="https://github.com/Charitha1121"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-yellow-300 transition-colors duration-300 text-2xl"
             aria-label="GitHub"
-            className="hover:text-gray-300"
           >
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/boddupally-charitha-3a0385277/"
+            href="https://www.linkedin.com/in/charitha-boddupally/"
             target="_blank"
             rel="noopener noreferrer"
+            className="hover:text-yellow-300 transition-colors duration-300 text-2xl"
             aria-label="LinkedIn"
-            className="hover:text-gray-300"
           >
             <FaLinkedin />
           </a>
         </div>
+        <p className="text-sm">
+          &copy; 2025 Boddupally Charitha. Built with 💖 using React & Tailwind CSS
+        </p>
       </footer>
     </div>
   );

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 
 const projects = [
   {
@@ -11,68 +10,39 @@ const projects = [
   {
     title: "Sudoku Solver",
     technologies: "Python",
-    description: "A Python program to solve Sudoku puzzles using backtracking algorithm.",
+    description: "A program that solves Sudoku puzzles efficiently.",
   },
   {
     title: "E-commerce Shopping Website",
     technologies: "SQL, PHP, HTML, CSS",
-    description: "Developed a complete e-commerce website with product listing, cart, and checkout.",
+    description: "Developed a fully functional e-commerce website with shopping cart and payment gateway.",
   },
   {
     title: "Currency Converter",
     technologies: "Java",
-    description: "A Java application that converts currencies based on current exchange rates.",
+    description: "A desktop application to convert currencies in real-time.",
   },
 ];
 
 export default function Projects() {
-  const [hovered, setHovered] = useState(false);
-  const [animateProps, setAnimateProps] = useState({ opacity: 1, y: 0 });
-
-  useEffect(() => {
-    let timer;
-    if (hovered) {
-      setAnimateProps({ opacity: 0, y: -20 });
-      timer = setTimeout(() => {
-        setAnimateProps({ opacity: 1, y: 0 });
-      }, 500);
-    } else {
-      setAnimateProps({ opacity: 1, y: 0 });
-      if (timer) clearTimeout(timer);
-    }
-    return () => clearTimeout(timer);
-  }, [hovered]);
-
   return (
-    <motion.section
+    <section
       id="projects"
-      className="bg-gradient-to-tr from-emerald-200 to-emerald-400 rounded-3xl shadow-lg p-8 max-w-5xl mx-auto cursor-pointer"
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
+      className="bg-white rounded-3xl shadow-lg p-8 animate-fadeInUp animation-delay-600"
     >
-      <motion.h2
-        className="text-3xl font-bold text-emerald-900 mb-6 text-center"
-        initial={{ opacity: 1, y: 0 }}
-        animate={animateProps}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-      >
-        Projects
-      </motion.h2>
-
-      <motion.div
-        className="space-y-6 text-emerald-900"
-        initial={{ opacity: 1, y: 0 }}
-        animate={animateProps}
-        transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-      >
+      <h2 className="text-3xl font-bold text-primary1 mb-6 text-center">Projects</h2>
+      <div className="max-w-6xl mx-auto space-y-8">
         {projects.map(({ title, technologies, description }) => (
-          <div key={title} className="bg-white rounded-xl p-5 shadow-md">
-            <h3 className="text-xl font-semibold">{title}</h3>
-            <p className="italic text-sm text-gray-600">{technologies}</p>
-            <p className="mt-2">{description}</p>
+          <div
+            key={title}
+            className="border-l-4 border-primary2 pl-6 hover:shadow-lg transition-shadow rounded-md p-4"
+          >
+            <h3 className="text-xl font-semibold text-primary2">{title}</h3>
+            <p className="text-sm italic mb-2">{technologies}</p>
+            <p>{description}</p>
           </div>
         ))}
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }

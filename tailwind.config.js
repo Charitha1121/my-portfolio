@@ -18,9 +18,29 @@ export default {
         fadeInUp: {
           '0%': { opacity: 0, transform: 'translateY(20px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
-        }
-      }
+        },
+      },
+      animationDelay: {
+        200: '0.2s',
+        400: '0.4s',
+        600: '0.6s',
+        800: '0.8s',
+        1000: '1s',
+        1200: '1.2s',
+        1400: '1.4s',
+        1600: '1.6s',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, theme }) {
+      const delays = theme('animationDelay');
+      const utilities = Object.entries(delays).map(([key, value]) => ({
+        [`.animation-delay-${key}`]: {
+          'animation-delay': value,
+        },
+      }));
+      addUtilities(utilities);
+    }
+  ],
 }

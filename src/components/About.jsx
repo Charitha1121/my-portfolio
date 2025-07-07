@@ -1,55 +1,44 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 
 export default function About() {
-  const [hovered, setHovered] = useState(false);
-  const [animateProps, setAnimateProps] = useState({ opacity: 1, y: 0 });
-
-  useEffect(() => {
-    let timer;
-    if (hovered) {
-      setAnimateProps({ opacity: 0, y: -20 });
-      timer = setTimeout(() => {
-        setAnimateProps({ opacity: 1, y: 0 });
-      }, 500);
-    } else {
-      setAnimateProps({ opacity: 1, y: 0 });
-      if (timer) clearTimeout(timer);
-    }
-    return () => clearTimeout(timer);
-  }, [hovered]);
-
   return (
-    <motion.section
+    <section
       id="about"
-      className="flex items-center space-x-10 bg-white rounded-3xl shadow-lg p-8 max-w-5xl mx-auto cursor-pointer"
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
+      className="pt-24 pb-16 px-4 sm:px-6 md:px-12 bg-white rounded-3xl shadow-2xl animate-fadeInUp"
     >
-      <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-indigo-600 shadow-lg flex-shrink-0">
-        <img
-          src="/charitha.jpeg"
-          alt="Charitha"
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <div className="container mx-auto max-w-6xl overflow-x-hidden">
+        <div className="flex flex-col sm:flex-row items-center gap-10 sm:gap-16">
+          <div className="w-52 h-52 sm:w-64 sm:h-64 bg-gradient-to-tr from-purple-500 via-pink-500 to-yellow-400 rounded-full p-1 shadow-lg hover:scale-105 transition-transform duration-500">
+            <div className="rounded-full overflow-hidden w-full h-full">
+              <img
+                src="/charitha.avif"
+                alt="Charitha"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
 
-      <motion.div
-        className="flex-1 space-y-4"
-        initial={{ opacity: 1, y: 0 }}
-        animate={animateProps}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-      >
-        <h2 className="text-4xl font-bold text-indigo-700">About Me</h2>
-        <p>
-          Dedicated and curious Computer Science student with a solid understanding of programming concepts, looking to leverage academic learning and project experience into a meaningful role in software development.
-        </p>
-        <p>
-          Contact me at: <br />
-          <strong>Phone:</strong> 7093734585 <br />
-          <strong>Email:</strong> boddupallycharitha@gmail.com
-        </p>
-      </motion.div>
-    </motion.section>
+          <div className="flex-1 space-y-5 text-center sm:text-left text-gray-800 dark:text-white">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+              👩‍💻 About Me
+            </h2>
+            <p className="text-lg leading-relaxed">
+             I am an enthusiastic and dedicated Computer Science student with a strong foundation in programming, algorithms, and software development principles. Passionate about solving complex problems and learning new technologies, I actively engage in projects that enhance my coding skills and practical knowledge. I have experience with languages such as Python, Java, and C, and I am eager to contribute to innovative software solutions. My goal is to grow as a well-rounded developer and make a positive impact through technology.
+
+
+            </p>
+            <p className="text-md text-gray-700 dark:text-gray-300">
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:boddupallycharitha@gmail.com"
+                className="text-blue-600 dark:text-yellow-400 hover:underline"
+              >
+                boddupallycharitha@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
